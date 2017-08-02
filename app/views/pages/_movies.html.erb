@@ -1,0 +1,20 @@
+<div class="row marged-top" id="movies">
+  <p>search for "batman" or "superman"</p>
+  <% movies&.each do |movie| %>
+
+    <div class="col-xs-12 col-sm-4">
+      
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://via.placeholder.com/300x300');">
+        
+          <p><%= movie.content %></p>          
+        <a class="card-link" href="#" ></a>
+      </div>
+
+    </div>
+  <% end %>
+</div>
+<div class="text-center">
+  <% unless movies.nil? %>
+    <%= paginate movies, remote: true%>
+  <% end %>
+</div>

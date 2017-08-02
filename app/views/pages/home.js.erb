@@ -1,0 +1,9 @@
+var moviesCount = <%= @movies.count %>;
+if (moviesCount === 0) {
+  var message = "<p>No results found</p>";
+  $('#movies').html(message); 
+} else {
+  $('#movies').empty()
+  var movies = $("<%= j render 'pages/movies', movies: @movies %>");
+  $('#movies').html(movies);
+}
